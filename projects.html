@@ -53,7 +53,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a class="active" href="projects.html">Projects</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -85,7 +85,8 @@
           <div class="filter-options">
             <button onclick="filterProjects('all')">All</button>
             <button onclick="filterProjects('category1')">Front-End</button>
-            <button onclick="filterProjects('category2')">Category 2</button>
+            <button onclick="filterProjects('category2')">Back-End</button>
+            <button onclick="filterProjects('category3')">Full Stack</button>
             <!-- Add more filter buttons as needed -->
           </div>
           <!-- Project 1 -->
@@ -118,7 +119,7 @@
           </div>
   
           <!-- Project 2 -->
-          <div class="project-item" data-category="category2" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-item" data-category="category2 category3" data-aos="fade-up" data-aos-delay="200">
             <div class="project-gallery" onclick="openPhotoModal(['project2-photo1.jpg', 'project2-photo2.jpg', 'project2-photo3.jpg'])">
               <div class="gallery-container">
                 <img src="project2-photo1.jpg" alt="Project 2 Photo 1" />
@@ -217,18 +218,18 @@
     document.addEventListener('DOMContentLoaded', () => {
       AOS.init();
     });
-
+    
     function filterProjects(category) {
-      const projects = document.querySelectorAll('.project-item');
-      projects.forEach(project => {
-        if (category === 'all' || project.getAttribute('data-category') === category) {
-          project.style.display = 'flex';
-        } else {
-          project.style.display = 'none';
-        }
-      });
-    }
-
+    const projects = document.querySelectorAll('.project-item');
+    projects.forEach(project => {
+      const categories = project.getAttribute('data-category').split(' ');
+      if (category === 'all' || categories.includes(category)) {
+        project.style.display = 'flex';
+      } else {
+        project.style.display = 'none';
+      }
+    });
+  }
     function openPhotoModal(photos) {
       const photoModal = document.getElementById('photo-modal');
       const photoCarousel = photoModal.querySelector('.photo-carousel');
