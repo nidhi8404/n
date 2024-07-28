@@ -1,0 +1,332 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.projects {
+  padding: 60px 0;
+}
+
+.projects h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+.filter-options {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.filter-options button {
+  background: hsl(194, 65%, 52%);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.filter-options button:hover {
+  background: hsl(193, 91%, 30%);
+}
+
+.project-item {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.project-info,
+.project-gallery {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.project-info {
+  background: #f9f9f9;
+}
+
+.project-info h3 {
+  margin: 0;
+  font-size: 2em;
+  color: #333;
+  font-weight: bold;
+}
+
+.project-info li {
+  color: #777;
+  margin: 10px 0;
+}
+
+.project-info p {
+  color: #777;
+  margin: 10px 0;
+}
+
+.project-info .btn,
+.project-info .video-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background:hsl(194, 65%, 52%);
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.project-info .btn:hover,
+.project-info .video-btn:hover {
+  background:  hsl(193, 91%, 30%);
+}
+
+.project-gallery {
+  background: #ddd;
+}
+
+.gallery-container {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-container img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  animation: slide 15s infinite;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  33% {
+    opacity: 1;
+  }
+
+  53% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.modal-content img,
+.modal-content video {
+  width: 100%;
+  height: auto;
+}
+
+.modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+}
+
+.photo-carousel {
+  display: flex;
+  overflow: hidden;
+}
+
+.photo-carousel img {
+  flex: 0 0 100%;
+  transition: transform 0.5s ease;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.carousel-controls button {
+  background: hsl(194, 65%, 52%);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carousel-controls button:hover {
+  background:  hsl(193, 91%, 30%);
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+
+  .project-item {
+    flex-direction: column;
+  }
+
+  .project-info,
+  .project-gallery {
+    padding: 10px;
+  }
+
+  .projects h2 {
+    font-size: 2em;
+  }
+
+  .filter-options button {
+    padding: 8px 16px;
+  }
+
+  .project-info h3 {
+    font-size: 1.5em;
+  }
+
+  .project-info .btn,
+  .project-info .video-btn {
+    padding: 8px 16px;
+  }
+
+  .gallery-container {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .projects h2 {
+    font-size: 1.8em;
+  }
+
+  .filter-options {
+    flex-direction: column;
+  }
+
+  .filter-options button {
+    margin-bottom: 10px;
+  }
+
+  .project-info h3 {
+    font-size: 1.3em;
+  }
+
+  .project-info .btn,
+  .project-info .video-btn {
+    padding: 6px 12px;
+  }
+
+  .gallery-container {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .projects h2 {
+    font-size: 1.5em;
+  }
+
+  .filter-options {
+    flex-direction: column;
+  }
+
+  .filter-options button {
+    padding: 6px 12px;
+    margin-bottom: 5px;
+  }
+
+  .project-info h3 {
+    font-size: 1.1em;
+  }
+
+  .project-info .btn,
+  .project-info .video-btn {
+    padding: 4px 8px;
+  }
+
+  .gallery-container {
+    height: 100px;
+  }
+}
+
+
+  .project-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .project-header h3 {
+    margin: 0;
+  }
+  
+  .link-button {
+    /* margin-left: 300px; */
+    display: inline-flex;
+    align-items: center;
+    padding: 8px;
+    /* background-color: #007bff; */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link-button:hover {
+    background-color:  hsl(194, 97%, 86%);
+  }
+  
+  .link-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
