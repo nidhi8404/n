@@ -59,3 +59,72 @@ h1 {
     font-size: 1rem;
     color: #777;
 }
+
+
+/* Media query for tablets and smaller desktops */
+@media (max-width: 1024px) {
+    .skill {
+        width: calc(50% - 20px);
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .skills-category h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Media query for mobile devices (landscape mode) */
+@media (max-width: 768px) {
+    .skill {
+        width: calc(50% - 20px);
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .skills-category h2 {
+        font-size: 1.5rem;
+    }
+
+    .skill h3 {
+        font-size: 1.25rem;
+    }
+
+    .skill p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Media query for mobile devices (portrait mode) */
+@media (max-width: 480px) {
+    .skills-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill {
+        width: 100%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .skills-category h2 {
+        font-size: 1.25rem;
+    }
+
+    .skill h3 {
+        font-size: 1.1rem;
+    }
+
+    .skill p {
+        font-size: 0.85rem;
+    }
+}
